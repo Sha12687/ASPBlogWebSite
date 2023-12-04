@@ -11,11 +11,14 @@ namespace BlogWebsite.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IBlogPostRepository blogPostRepository;
         private readonly ITagRepository tagRepository;
+ //       private readonly IWebHostEnvironment webHostEnvironment;
 
         public HomeController(ILogger<HomeController> logger, IBlogPostRepository blogPostRepository, ITagRepository tagRepository)
         {
+
             this.blogPostRepository = blogPostRepository;
             this.tagRepository = tagRepository;
+         //   this.webHostEnvironment = webHostEnvironment;
             _logger = logger;
         }
 
@@ -23,6 +26,7 @@ namespace BlogWebsite.Controllers
         {
             try
             {
+                //LogEvents.LogFile("Title", "Total record fetched " + blogPostRepository.GetAllAsync(),webHostEnvironment);
                 _logger.LogInformation("Executing Index action");
 
                 var allPostBLogs = await blogPostRepository.GetAllAsync();
@@ -39,6 +43,7 @@ namespace BlogWebsite.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred in the Index action");
+                //LogEvents.LogFile("Title",   ex.ToString(), webHostEnvironment);
                 throw; // Re-throw the exception to let the error handling middleware deal with it
             }
         }
