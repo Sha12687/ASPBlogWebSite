@@ -2,11 +2,13 @@
 using BlogWebsite.Models.Domain;
 using BlogWebsite.Models.Reposotiry;
 using BlogWebsite.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BlogWebsite.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdminBlogPostController : Controller
     {
 

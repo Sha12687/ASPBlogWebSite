@@ -6,9 +6,11 @@ using BlogWebsite.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using BlogWebsite.Models.Reposotiry;
 using Azure;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BlogWebsite.Controllers
 {
+    [Authorize (Roles ="admin")]
     public class AdminTagsController : Controller
     {
         readonly private ITagRepository tagRepository;
@@ -17,6 +19,7 @@ namespace BlogWebsite.Controllers
             this.tagRepository = repository;
         }
         [HttpGet]
+        [Authorize (Roles ="Admin")]
         public IActionResult Add()
         {
             return View();
@@ -81,7 +84,7 @@ namespace BlogWebsite.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> DeleteTag(TagEditModel editModel)
+          public async Task<ActionResult> DeleteTag(TagEditModel editModel)
         {
        var deletedtag =  await tagRepository.DeleteAsync(editModel.Id);
             if (deletedtag != null)
@@ -95,5 +98,10 @@ namespace BlogWebsite.Controllers
                 return View("Edit", new { editModel.Id });
             }
         }
+
+     
     }
+
+   
+
 }

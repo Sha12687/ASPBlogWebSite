@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\shashant\source\repos\BlogWebsite\BlogWebsite
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/shashant/source/repos/BlogWebsite/BlogWebsite/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shashant/source/repos/BlogWebsite/BlogWebsite/Views/Account/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dJbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shashant/source/repos/BlogWebsite/BlogWebsite/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/shashant/source/repos/BlogWebsite/BlogWebsite/Views/AdminBlogPost/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5CbG9nUG9zdFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/shashant/source/repos/BlogWebsite/BlogWebsite/Views/AdminTags/Tags.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UYWdzXFRhZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shashant/source/repos/BlogWebsite/BlogWebsite/Views/AdminUser/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shashant/source/repos/BlogWebsite/BlogWebsite/Views/BLogs/Index.cshtml]

@@ -9,7 +9,7 @@ namespace BlogWebsite.Data
 {
     public class AuthDbContext : IdentityDbContext
     {
-        public AuthDbContext(DbContextOptions options) : base(options)
+        public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options)
         {
         }
 
@@ -53,12 +53,29 @@ namespace BlogWebsite.Data
             {
                UserName="superAdmin@bloggie.com",
                Email= "superAdmin@bloggie.com",
-               NormalizedEmail= "superAdmin@bloggie.com".ToUpper(),
+               NormalizedEmail = "superAdmin@bloggie.com".ToUpper(),
                Id= superAdminId,
             };
             superAdminUser.PasswordHash = new PasswordHasher<IdentityUser>()
                                         .HashPassword(superAdminUser, "superAdmin@123");
             builder.Entity<IdentityUser>().HasData(superAdminUser);
+
+
+
+
+            var newAdminId = "51ae3cfb-5e28-4e9b-b7aa-8a655b449756"; // Generate a new GUID for the new admin user
+            var newAdminUser = new IdentityUser
+            {
+                UserName = "newadmin@bloggie.com",
+                Email = "newadmin@bloggie.com",
+                NormalizedEmail = "newadmin@bloggie.com".ToUpper(),
+                NormalizedUserName = "newadmin@bloggie.com".ToUpper(),
+                Id = newAdminId,
+            };
+            newAdminUser.PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(newAdminUser, "newAdmin@123");
+
+            builder.Entity<IdentityUser>().HasData(newAdminUser);
+
             var superAdminRole = new List<IdentityUserRole<string>>
             {
                 new IdentityUserRole<string>
@@ -78,6 +95,26 @@ namespace BlogWebsite.Data
                 }
             };
               builder.Entity<IdentityUserRole<string>>().HasData(superAdminRole);
+            var newAdminUserRoles = new List<IdentityUserRole<string>>
+{
+    new IdentityUserRole<string>
+    {
+        RoleId = AdminId,
+        UserId = newAdminId
+    },
+    new IdentityUserRole<string>
+    {
+        RoleId = userRoleId,
+        UserId = newAdminId
+    },
+    new IdentityUserRole<string>
+    {
+        RoleId = superRoldAdminId, // Use the existing SuperAdmin role ID
+        UserId = newAdminId
+    }
+};
+
+            builder.Entity<IdentityUserRole<string>>().HasData(newAdminUserRoles);
         }
     }
 }

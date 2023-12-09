@@ -252,3 +252,4 @@ C:\Users\shashant\source\repos\BlogWebsite\BlogWebsite\obj\Debug\net7.0\refint\B
 C:\Users\shashant\source\repos\BlogWebsite\BlogWebsite\obj\Debug\net7.0\BlogWebsite.pdb
 C:\Users\shashant\source\repos\BlogWebsite\BlogWebsite\obj\Debug\net7.0\BlogWebsite.genruntimeconfig.cache
 C:\Users\shashant\source\repos\BlogWebsite\BlogWebsite\obj\Debug\net7.0\ref\BlogWebsite.dll
+C:\Users\shashant\source\repos\BlogWebsite\BlogWebsite\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
